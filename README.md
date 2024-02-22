@@ -25,6 +25,7 @@ brew install python3
 # set up a virtual enviornment in terminal
 
 python3 -m venv venv
+
 source venv/bin/activate
 
 # install requires dependencies
