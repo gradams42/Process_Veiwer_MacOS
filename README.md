@@ -14,6 +14,10 @@ or
 
 gh repo clone gradams42/Process_Veiwer_MacOS
 
+# Go into "Process&Threads Prog" directory
+
+cd Process&\ Threads\ Prog
+
 # Ensure python3 is installed
 
 brew install python3
