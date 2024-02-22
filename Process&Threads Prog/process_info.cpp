@@ -2,6 +2,7 @@
 #include <libproc.h>
 #include <thread>
 #include <chrono>
+#include <pwd.h>  // to show which user created the process
 #include "process_info.h"
 
 extern "C" {
@@ -23,8 +24,13 @@ int Processes() {
         int result = proc_pidinfo(processIDs[i], PROC_PIDTBSDINFO, 0, &processInfo, sizeof(processInfo));
 
         if (result > 0) {
-            // Print process information
-            std::cout << "Process ID: " << processInfo.pbi_pid << "\tName: " << processInfo.pbi_name << std::endl;
+            // Get user information
+            struct passwd *userInfo = getpwuid(processInfo.pbi_uid);
+
+            // Print process and user information
+            std::cout << "Process ID: " << processInfo.pbi_pid
+                      << "\tName: " << processInfo.pbi_name
+                      << "\tUser: " << (userInfo ? userInfo->pw_name : "N/A") << std::endl;
         } else {
             // std::cerr << "Failed to retrieve process information for PID: " << processIDs[i] << std::endl;
         }
@@ -42,3 +48,4 @@ void PrintProcessInfoPeriodically() {
 }
 
 }  // extern "C"
+
