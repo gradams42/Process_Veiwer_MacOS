@@ -1,19 +1,11 @@
-# Process_Veiwer_MacOS
-This is a python wrapper on top of C++ code to output running processes on MacOS
+# Process Viewer for MacOS
 
+This project provides a Python wrapper for interacting with C++ code to retrieve information about running processes on MacOS.
 
-# To Clone and run:
-https://github.com/gradams42/Process_Veiwer_MacOS.git
+## Getting Started
 
-brew install python3
+### Clone the Repository
 
-pip install -r requirements.txt
+You can clone the repository with:
 
-# install setuptools
-brew install python-setuptools
-
-
-
-python3 setup.py build_ext --inplace
-
-python3 main.py
+git clone https://github.com/gradams42/Process_Veiwer_MacOS.git
