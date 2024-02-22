@@ -9,6 +9,11 @@ brew install python3
 
 pip install -r requirements.txt
 
-python setup.py build_ext --inplace
+# install setuptools
+brew install python-setuptools
+
+
+
+python3 setup.py build_ext --inplace
 
 python3 main.py
