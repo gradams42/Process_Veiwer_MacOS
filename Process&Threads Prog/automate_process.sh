@@ -1,8 +1,6 @@
-
-
 # Check if Homebrew is installed, install if not
 # /bin/bash is the location homebrew is supposed to be installed at, 
-# so the command goe sinto that directory for the command
+# so the command goes into that directory for the installation
 if ! command -v brew &> /dev/null
 then
     echo "Homebrew not found, installing..."
@@ -24,10 +22,10 @@ then
     easy_install pip
 fi
 
-# Go into "Process&Threads Prog" directory
+# Navigate to the "Process&Threads Prog" directory
 cd "Process& Threads Prog"
 
-# Set up a virtual environment in terminal
+# Set up a virtual environment in the terminal
 # First Command
 python3 -m venv venv
 
