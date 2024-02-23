@@ -9,7 +9,7 @@ extern "C" {
 
 int Processes() {
     // Get the list of process IDs
-    int processIDs[2048];  // Use a reasonable size, you can adjust if needed
+    int processIDs[2048];  // Max amount of processes being checked
     int numberOfProcesses = proc_listpids(PROC_ALL_PIDS, 0, processIDs, sizeof(processIDs));
 
     if (numberOfProcesses <= 0) {
