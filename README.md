@@ -18,25 +18,6 @@ gh repo clone gradams42/Process_Veiwer_MacOS
 
 cd Process&\ Threads\ Prog
 
-# Ensure python3 is installed
+# Run the bash script
 
-brew install python3
-
-# set up a virtual enviornment in terminal
-
-## First Command
-python3 -m venv venv
-
-## Second Command
-source venv/bin/activate
-
-# Install requires dependencies
-pip install -r requirements.txt
-
-# build the code
-
-python3 setup.py build_ext --inplace
-
-# run the script
-
-python3 main.py
+./automate_process.sh
