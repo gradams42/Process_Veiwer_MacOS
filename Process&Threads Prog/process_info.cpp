@@ -1,9 +1,9 @@
 #include <iostream>
-#include <libproc.h>
-#include <thread>
-#include <chrono>
+#include <libproc.h> // To find the path for a process within the OS
+#include <thread>  // to find names of processes
+#include <chrono> //library for managing time
 #include <pwd.h>  // to show which user created the process
-#include "process_info.h"
+#include "process_info.h" // header file for declaration
 
 extern "C" {
 
