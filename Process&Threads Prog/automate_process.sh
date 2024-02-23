@@ -1,6 +1,8 @@
-#!/bin/bash
+
 
 # Check if Homebrew is installed, install if not
+# /bin/bash is the location homebrew is supposed to be installed at, 
+# so the command goe sinto that directory for the command
 if ! command -v brew &> /dev/null
 then
     echo "Homebrew not found, installing..."
@@ -32,10 +34,10 @@ python3 -m venv venv
 # Second Command
 source venv/bin/activate
 
-# Install required dependencies
+# Install required dependencies located in requirements.txt "-r does it recursively"
 pip install -r requirements.txt
 
-# Build the code
+# Build the library locally
 python3 setup.py build_ext --inplace
 
 # Run the script
