@@ -9,6 +9,8 @@ then
     brew install python3
 fi
 
+echo "Entering VIRTUAL ENVIORNMENT"
+
 # Set up a virtual environment in the terminal
 # First Command
 python3 -m venv venv
@@ -27,9 +29,6 @@ then
     # Install pip using easy_install
     easy_install pip3
 fi
-
-# Navigate to the "Process&Threads Prog" directory
-cd "Process& Threads Prog"
 
 
 # Second Command
