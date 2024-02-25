@@ -1,37 +1,41 @@
-# Check if Homebrew is installed, install if not
-# /bin/bash is the location homebrew is supposed to be installed at, 
-# so the command goes into that directory for the installation
+#!/bin/bash
+
+# Function to check if a command is available
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+echo "Entering VIRTUAL ENVIRONMENT"
 
 # Check if python3 is installed, install if not
-if ! command -v python3 &> /dev/null
-then
+if ! command_exists python3; then
     echo "Python3 not found, installing..."
-    brew install python3
+    if command_exists brew; then
+        brew install python3
+    else
+        echo "Homebrew not found, please install Homebrew manually."
+        exit 1
+    fi
 fi
 
-echo "Entering VIRTUAL ENVIORNMENT"
-
-# Set up a virtual environment in the terminal
-# First Command
-python3 -m venv venv
-
-if ! command -v brew &> /dev/null
-then
+# Check if Homebrew is installed, install if not
+if ! command_exists brew; then
     echo "Homebrew not found, installing..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-
 # Check if pip is installed, install if not
-if ! command -v pip3 &> /dev/null
-then
+if ! command_exists pip3; then
     echo "Pip not found, installing..."
     # Install pip using easy_install
     easy_install pip3
 fi
 
+# Set up a virtual environment in the terminal
+# First Command
+python3 -m venv venv
 
-# Second Command
+# Activate the virtual environment
 source venv/bin/activate
 
 # Install required dependencies located in requirements.txt "-r does it recursively"
