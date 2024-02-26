@@ -30,7 +30,6 @@ then
     brew install python3
 fi
 
-echo "Entering VIRTUAL ENVIORNMENT"
 
 # Set up a virtual environment in the terminal
 # First Command
