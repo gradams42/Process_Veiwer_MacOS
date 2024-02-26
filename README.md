@@ -16,9 +16,8 @@ gh repo clone gradams42/Process_Veiwer_MacOS
 
 # Go into "Process&Threads Prog" directory
 
-cd Process&\ Threads\ Prog/Process&\ Threads\ Prog/ dist/ main
+cd Process&\ Threads\ Prog
 
+# Run the bash script
 
-# Run the executable file
-
-./main
+./automate_process.sh
