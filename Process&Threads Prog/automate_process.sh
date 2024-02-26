@@ -5,7 +5,6 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-echo "Entering VIRTUAL ENVIRONMENT"
 
 # Check if python3 is installed, install if not
 if ! command_exists python3; then
@@ -28,8 +27,11 @@ fi
 if ! command_exists pip3; then
     echo "Pip not found, installing..."
     # Install pip using easy_install
-    easy_install pip3
+    python get-pip.py
 fi
+
+
+echo "Entering VIRTUAL ENVIRONMENT"
 
 # Set up a virtual environment in the terminal
 # First Command
