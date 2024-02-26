@@ -41,8 +41,11 @@ if ! command -v pip3 &> /dev/null
 then
     echo "Pip not found, installing..."
     # Install pip using easy_install
-    easy_install pip3
+    python get-pip.py
 fi
+
+
+echo "Entering VIRTUAL ENVIRONMENT"
 
 
 # Second Command
